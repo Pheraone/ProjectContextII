@@ -2,8 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BeeMovement : MonoBehaviour
+public class Player : MonoBehaviour
 {
+    private static Player instance;
+    public static Player Instance
+    {
+        get
+        {
+            return instance;
+        }
+    }
+
     public float forwardSpeed = 25f;
     public float strafeSpeed = 7.5f;
     public float hoverSpeed = 5f;
@@ -27,6 +36,7 @@ public class BeeMovement : MonoBehaviour
     {
         CalculateMouse();
         Move();
+        Win();
 
     }
 
@@ -57,4 +67,12 @@ public class BeeMovement : MonoBehaviour
         mouseDistance = Vector2.ClampMagnitude(mouseDistance, 1f);
     }
 
+    //For testing!
+    void Win()
+    {
+        if (Input.GetKeyDown(KeyCode.V))
+        {
+            GameManager.Instance.fsm.GotoState(GameStateType.Win);
+        }
+    }
 }
