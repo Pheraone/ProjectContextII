@@ -9,6 +9,9 @@ public class Player : MonoBehaviour
     {
         get
         {
+            if (instance == null)
+                instance = FindObjectOfType<Player>();
+
             return instance;
         }
     }
@@ -21,6 +24,10 @@ public class Player : MonoBehaviour
 
     public float lookRotateSpeed = 90f;
     private Vector2 lookInput, screenCenter, mouseDistance;
+
+    public int score = 0;
+    public int scoreKeeper;
+
 
     //private float rollInput;
     //public float rollSpeed = 90f, rollAcceleration = 3.5f;
@@ -37,7 +44,6 @@ public class Player : MonoBehaviour
         CalculateMouse();
         Move();
         Win();
-
     }
 
     void Move()
@@ -65,6 +71,14 @@ public class Player : MonoBehaviour
         mouseDistance.y = (lookInput.y - screenCenter.y) / screenCenter.y;
 
         mouseDistance = Vector2.ClampMagnitude(mouseDistance, 1f);
+    }
+
+    void CalculateScore()
+    {
+        score++;
+        Debug.Log(score);
+        Debug.Log(scoreKeeper);
+        scoreKeeper = score;
     }
 
     //For testing!

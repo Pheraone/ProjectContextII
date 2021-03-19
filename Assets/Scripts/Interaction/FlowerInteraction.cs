@@ -7,6 +7,7 @@ public class FlowerInteraction : MonoBehaviour, IInteractable
     public float MaxRange { get { return maxRange; } }
     public float maxRange;
 
+    public bool hasScored = false;
     public void OnStartHover()
     {
         //highlight mat
@@ -15,6 +16,14 @@ public class FlowerInteraction : MonoBehaviour, IInteractable
 
     public void OnInteract()
     {
+        if(hasScored == false)
+        {
+
+            Player.Instance.score++;
+        }
+
+        hasScored = true;
+        Debug.Log(Player.Instance.score);
         //particle play
         Debug.Log($"Woooo Particles {gameObject}");
     }
