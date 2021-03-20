@@ -27,6 +27,7 @@ public class Player : MonoBehaviour
 
     public int score = 0;
     public int scoreKeeper;
+    public int maxScore = 5;
 
 
     //private float rollInput;
@@ -84,7 +85,8 @@ public class Player : MonoBehaviour
     //For testing!
     void Win()
     {
-        if (Input.GetKeyDown(KeyCode.V))
+        //score == maxScore
+        if (score == maxScore)
         {
             GameManager.Instance.fsm.GotoState(GameStateType.Win);
         }

@@ -10,6 +10,12 @@ public class FlowerManager : MonoBehaviour
     public GameObject flowerObject3;
     public GameObject flowerObject4;
 
+    public int firstGoal =  1;
+    public int secondGoal = 2;
+    public int thirdGoal = 3;
+    public int fourthGoal = 4;
+
+
     private void Update()
     {
         CheckFlowerScore();
@@ -17,24 +23,22 @@ public class FlowerManager : MonoBehaviour
 
     void CheckFlowerScore()
     {
-        if( Player.Instance.score == 2)
+        if( Player.Instance.score == firstGoal)
         {
             flowerObject1.SetActive(true);
         } 
 
-        if( Player.Instance.score == 4)
+        if( Player.Instance.score == secondGoal)
         {
             flowerObject2.SetActive(true);
         }
 
-
-        if (Player.Instance.score == 6)
+        if (Player.Instance.score == thirdGoal)
         {
             flowerObject2.SetActive(true);
         }
 
-
-        if (Player.Instance.score == 8)
+        if (Player.Instance.score == fourthGoal)
         {
             flowerObject4.SetActive(true);
         }

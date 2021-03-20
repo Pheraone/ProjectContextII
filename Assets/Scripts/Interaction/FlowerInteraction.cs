@@ -7,6 +7,8 @@ public class FlowerInteraction : MonoBehaviour, IInteractable
     public float MaxRange { get { return maxRange; } }
     public float maxRange;
 
+    [SerializeField] private ParticleSystem flowerParticle;
+
     public bool hasScored = false;
     public void OnStartHover()
     {
@@ -25,6 +27,8 @@ public class FlowerInteraction : MonoBehaviour, IInteractable
         hasScored = true;
         Debug.Log(Player.Instance.score);
         //particle play
+
+        flowerParticle.Play();
         Debug.Log($"Woooo Particles {gameObject}");
     }
 
