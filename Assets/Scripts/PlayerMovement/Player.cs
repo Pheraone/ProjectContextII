@@ -45,12 +45,15 @@ public class Player : MonoBehaviour
         CalculateMouse();
         Move();
         Win();
+
+        Debug.Log(score);
     }
 
     void Move()
     {
         //TODO: not turn as much when not flying -> clamp?
-        transform.Rotate(-mouseDistance.y * lookRotateSpeed * Time.deltaTime, mouseDistance.x * lookRotateSpeed * Time.deltaTime, 0f, Space.Self);
+        transform.Rotate(-mouseDistance.y * lookRotateSpeed * Time.deltaTime, 0, 0f, Space.Self);
+        transform.Rotate(0, mouseDistance.x * lookRotateSpeed * Time.deltaTime, 0, Space.World);
 
 
         activeForwardSpeed = Mathf.Lerp(activeForwardSpeed, Input.GetAxisRaw("Vertical") * forwardSpeed, forwardAcceleration * Time.deltaTime);
