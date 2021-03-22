@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-4408797300567673894
+--- !u!114 &-8265044524516977903
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
@@ -20,8 +20,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: wijk 2
-  m_Shader: {fileID: -6465566751694194690, guid: e1316d7669f04d546a219a439c136208,
+  m_Name: FrontBody1
+  m_Shader: {fileID: -6465566751694194690, guid: 44515f21e39eee34eb0b445a54ab7117,
     type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -33,16 +33,12 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - Texture2D_55779EC9:
-        m_Texture: {fileID: 2800000, guid: 46bd003ec2013404cb18a00cdea2d1d9, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - Texture2D_FDF5B2C5:
-        m_Texture: {fileID: 2800000, guid: 275f1ed58b36b4424bee28d2747aa6ee, type: 3}
+    - Texture2D_8C8C6514:
+        m_Texture: {fileID: 2800000, guid: 1bcebab22c9d7ea4787016b163d47b77, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 6e4bbb48a406e5e4baa4007c50706794, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
@@ -54,7 +50,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 6e4bbb48a406e5e4baa4007c50706794, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -69,12 +65,14 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _Texture2DAsset_A9814797_Out_0:
-        m_Texture: {fileID: 2800000, guid: bd0ade903b46441f887d99d115588e6f, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Vector1_2F7C2650: 0.1
+    - Vector1_1BAC2C71: 200
+    - Vector1_5247F8FF: 0.056
+    - Vector1_59DB4D9C: 0
+    - Vector1_6499420A: 0
+    - Vector1_8672AC0: 0.09
+    - Vector1_94A0A8B4: 0
+    - Vector1_D1DF574C: 10
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
@@ -97,8 +95,9 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - Color_B671C548: {r: 1, g: 0.90545225, b: 0.7783019, a: 0}
-    - _BaseColor: {r: 0.9811321, g: 0.7214932, b: 0.54147387, a: 1}
+    - Color_BFB6B31F: {r: 1, g: 0.9403155, b: 0.58018863, a: 0}
+    - Vector2_E8B4C7C9: {r: 0.1, g: 0, b: 0, a: 0}
+    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
