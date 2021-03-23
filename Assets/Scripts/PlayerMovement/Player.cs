@@ -26,7 +26,6 @@ public class Player : MonoBehaviour
     private Vector2 lookInput, screenCenter, mouseDistance;
 
     public int score = 0;
-    public int scoreKeeper;
     public int maxScore = 5;
 
 
@@ -45,8 +44,6 @@ public class Player : MonoBehaviour
         CalculateMouse();
         Move();
         Win();
-
-        Debug.Log(score);
     }
 
     void Move()
@@ -81,8 +78,6 @@ public class Player : MonoBehaviour
     {
         score++;
         Debug.Log(score);
-        Debug.Log(scoreKeeper);
-        scoreKeeper = score;
     }
 
     //For testing!
