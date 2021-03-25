@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class FlowerManager : MonoBehaviour
 {
@@ -26,10 +27,16 @@ public class FlowerManager : MonoBehaviour
     public int thirdGoal =  3;
     public int fourthGoal = 4;
 
+    public int score = 0;
 
 
-    private void fixedUpdate()
+    private void Update()
     {
+
+        if (score == 4)
+        {
+            GameManager.Instance.fsm.GotoState(GameStateType.Win);
+        }
     }
 
     public void CheckOrange(bool test)
@@ -38,6 +45,7 @@ public class FlowerManager : MonoBehaviour
         {
             Debug.Log("hello");
             flowerObject1.SetActive(true);
+            score++;
         }
     }
     public void CheckBlue(bool blue)
@@ -46,6 +54,7 @@ public class FlowerManager : MonoBehaviour
         {
             Debug.Log("hello1");
             flowerObject2.SetActive(true);
+            score++;
         }
     }
 
@@ -55,6 +64,7 @@ public class FlowerManager : MonoBehaviour
         {
             Debug.Log("hello1");
             flowerObject3.SetActive(true);
+            score++;
         }
     }
 
@@ -64,18 +74,10 @@ public class FlowerManager : MonoBehaviour
         {
             Debug.Log("hello1");
             flowerObject4.SetActive(true);
+            score++;
         }
     }
-    // if (FlowerInteraction.Instance.pinkFlowerHit == true)
-    //{
-    //    Debug.Log("hello2");
-    //    flowerObject3.SetActive(true);
-    //}
-    // if (FlowerInteraction.Instance.purpleFlowerHit == true)
-    //{
-    //    Debug.Log("hello3");
-    //    flowerObject4.SetActive(true);
-    //}
+  
 
 
 

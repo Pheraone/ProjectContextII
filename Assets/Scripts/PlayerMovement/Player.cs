@@ -43,7 +43,7 @@ public class Player : MonoBehaviour
     {
         CalculateMouse();
         Move();
-        Win();
+        //Win();
     }
 
     void Move()
@@ -81,12 +81,12 @@ public class Player : MonoBehaviour
     }
 
     //For testing!
-    void Win()
-    {
-        //score == maxScore
-        if (score == maxScore)
-        {
-            GameManager.Instance.fsm.GotoState(GameStateType.Win);
-        }
-    }
+    //void Win()
+    //{
+    //    //score == maxScore
+    //    if (score == maxScore)
+    //    {
+    //        GameManager.Instance.fsm.GotoState(GameStateType.Win);
+    //    }
+    //}
 }
