@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -16,7 +17,7 @@ public class GameManager : MonoBehaviour
     [Header("UI objects")]
     public GameObject pauseObject;
     public GameObject winMenuObject;
-    //public GameObject inGameUI;
+    public GameObject inGameUI;
     public GameObject startObject;
 
     //[SerializeField] private GameObject[] tutorialText = new GameObject[3];
@@ -81,6 +82,18 @@ public class GameManager : MonoBehaviour
         IsPaused = true;
         //Player.Instance.enabled = false;
         fsm.GotoState(GameStateType.Win);
+    }
+
+    public void RestartGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void QuitGame()
+    {
+        Debug.Log("game is quitting");
+         Application.Quit();
+    
     }
 
     public void GoToStart()

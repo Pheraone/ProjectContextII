@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public enum GameStateType { Start, Play, Pause, Win }
 
@@ -26,24 +27,18 @@ public class StartState : GameState
     {
         //open pause menu, freeze game, unlock cursor
         GameManager.Instance.startObject.SetActive(true);
-        //GameManager.Instance.inGameUI.SetActive(false);
         Time.timeScale = 0f;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
     }
     public override void Update()
     {
-        //if (Input.GetKeyDown(KeyCode.Escape))
-        //{
-        //    GameManager.Instance.fsm.GotoState(GameStateType.Play);
-        //}
+     
     }
     public override void Exit()
     {
         GameManager.Instance.startObject.SetActive(false);
-        //GameManager.Instance.inGameUI.SetActive(true);
         Time.timeScale = 1f;
-
         Cursor.lockState = CursorLockMode.Confined;
     }
 }
@@ -72,46 +67,45 @@ public class PauseState : GameState
     {
         //open pause menu, freeze game, unlock cursor
         GameManager.Instance.pauseObject.SetActive(true);
-        //GameManager.Instance.inGameUI.SetActive(false);
+        GameManager.Instance.inGameUI.SetActive(false);
         Time.timeScale = 0f;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
     }
     public override void Update()
     {
-        //if (Input.GetKeyDown(KeyCode.Escape))
-        //    GameManager.Instance.fsm.GotoState(GameStateType.Play);
+
     }
     public override void Exit()
     {
         GameManager.Instance.pauseObject.SetActive(false);
-        //GameManager.Instance.inGameUI.SetActive(true);
         Time.timeScale = 1f;
-
         Cursor.lockState = CursorLockMode.Confined;
     }
 }
 public class WinState : GameState
 {
-    //game reset?
     public override void Enter()
     {
         GameManager.Instance.winMenuObject.SetActive(true);
-        //GameManager.Instance.inGameUI.SetActive(false);
+        GameManager.Instance.inGameUI.SetActive(false);
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         Time.timeScale = 0f;
         Debug.Log("entering win state");
+        Player.Instance.score = 0;
     }
     public override void Update()
     {
-
+        
     }
     public override void Exit()
     {
-        GameManager.Instance.winMenuObject.SetActive(false);
-       // GameManager.Instance.inGameUI.SetActive(true);
+
         Time.timeScale = 1f;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         Debug.Log("Exiting win state");
+
+        GameManager.Instance.winMenuObject.SetActive(false);
     }
 }
